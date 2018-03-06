@@ -10,13 +10,22 @@
                 title
             {% endblock %}
         </title>
+        {% block style %}
+
+        {% endblock %}
     </head>
     <body>
     {% include 'partials/header.njk' %}
+
     {% block content %}
 
     {% endblock %}
+
     {% include 'partials/footer.njk' %}
+
+    {% block script %}
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    {% endblock %}
     </body>
     </html>
 {% endblock %}

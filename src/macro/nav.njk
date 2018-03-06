@@ -1,9 +1,9 @@
 {% macro nav(list) %}
     <ul class="nav">
         {% for item in list %}
-            <li><a href="#">{{ item.name }}</a></li>
+            <li class="nav-item"><a href="#">{{ item.name }}</a></li>
         {% else %}
-            <li>not have nav</li>
+            <li class="nav-item">not have nav</li>
         {% endfor %}
     </ul>
 {% endmacro %}

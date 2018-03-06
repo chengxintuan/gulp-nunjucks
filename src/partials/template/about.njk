@@ -4,6 +4,30 @@
     about
 {% endblock %}
 
+{% block style %}
+    <style type="text/css">
+        .content {
+            color: orangered;
+        }
+    </style>
+{% endblock %}
+
 {% block content %}
-    <div class="content">content</div>
+    {% import 'macro/nav.njk' as navs %}
+    <div class="content">
+        {{ navs.nav(nav) }}
+    </div>
+{% endblock %}
+
+{% block script %}
+    {{ super() }}
+    <script type="text/javascript">
+        $('.nav .nav-item').on('click', function () {
+            var _self = $(this);
+
+            _self.css({
+                'color': 'red'
+            })
+        });
+    </script>
 {% endblock %}
